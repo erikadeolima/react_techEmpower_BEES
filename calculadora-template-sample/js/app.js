@@ -10,6 +10,11 @@ teclas.addEventListener("click", e => {
     let displayedNum = display.textContent;
     if (keyContent === 'on') {
       clearDisplay();
+    } else if (keyContent === 'raiz') {
+      console.log('raiz');
+    }
+    else if (keyContent === 'igual') {
+      console.log('igual');
     } else if (keyContent === 'sign') {
       changeSignal();
     } else {
@@ -36,12 +41,6 @@ teclas.addEventListener("click", e => {
   }
   if (functionOfKey === 'tecla divide') {
     console.log('divide');
-  }
-  if (keyContent === 'raiz') {
-    console.log('raiz');
-  }
-  if (keyContent === 'igual') {
-    console.log('igual');
   }
 })
 
