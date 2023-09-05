@@ -5,11 +5,13 @@ const display = document.getElementById("display");
 teclas.addEventListener("click", e => {
   const key = e.target;
   const functionOfKey = key.attributes.class.textContent;
+  const keyContent = key.attributes.id.textContent;
   if (functionOfKey === 'tecla') {
-    const keyContent = key.attributes.id.textContent;
     let displayedNum = display.textContent;
     if (keyContent === 'on') {
       clearDisplay();
+    } else if (keyContent === 'sign') {
+      changeSignal();
     } else {
       if (keyContent === 'punto') {
         display.textContent = displayedNum + '.';
@@ -22,10 +24,24 @@ teclas.addEventListener("click", e => {
       }
     }
   }
-  if (functionOfKey !== 'tecla') {
-    if (functionOfKey[1] === '') {
-
-    }
+  console.log('functionOfKey', functionOfKey)
+  if (functionOfKey === 'tecla suma') {
+    console.log('soma');
+  }
+  if (functionOfKey === 'tecla multiplica') {
+    console.log('multiplica');
+  }
+  if (functionOfKey === 'tecla resta') {
+    console.log('resta');
+  }
+  if (functionOfKey === 'tecla divide') {
+    console.log('divide');
+  }
+  if (keyContent === 'raiz') {
+    console.log('raiz');
+  }
+  if (keyContent === 'igual') {
+    console.log('igual');
   }
 })
 
@@ -36,8 +52,6 @@ function clearDisplay() {
 function changeSignal() {
   const actualValue = display.innerHTML;
   const changedSignalvalue = Number(actualValue) * -1;
-  console.log(actualValue);
-  console.log(changedSignalvalue);
   switch (changedSignalvalue) {
     case '-0':
       return display.innerHTML = actualValue;
@@ -48,7 +62,6 @@ function changeSignal() {
 
 async function somarValores() {
   const firstNumber = display.innerHTML;
-
   const sum = firstNumber + secondNumber
   console.log(sum);
 }
