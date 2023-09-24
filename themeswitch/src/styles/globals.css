@@ -1,0 +1,15 @@
+.light {
+  background-color: gray;
+}
+
+.dark {
+  background-color: black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
